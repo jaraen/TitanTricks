@@ -1,0 +1,130 @@
+
+TitanTricks is Titanium Mobile project, full of reusable code samples and tricks
+with a didactic aim, oriented to begginers and intermediate level users.
+
+Is compatible with android and iOS, but some samples only work on iOS (indicated on each case).
+
+The project itself is a sample of how to structure a titanium project and how to work with JavaScript
+using basic technics and principles.
+
+Component oriented
+==================
+TitanTricks uses the "factory" JavaScritp pattern everywhere. Thanks to this, there is no need to use the "new"
+JavaScript constructor keyword (an interesting discussion about the "new" JavaScript keyword can be found in Douglas 
+Crockford literature).
+
+Echa file includes a component, that can be a only-one-use component (such as AppWindow) or a reusable component (like
+those on /ui/components folder).
+
+And also, all TitanTricks components can be easily reused. You can copy and paste 
+directly the ui/components folder inside your projects. Include components.js file in your code
+and you are ready to start using TitanTricks components.
+
+
+Style
+=====
+TitanTricks is built following the "Tweetanium style", but a little bit more strict in declarations. 
+
+Each file includes in its first lines the public methods implemented in that file, so is easier to find
+public method declarations. For example:
+
+//declare all public methods of this file before start coding.
+//JSlint friendly :)
+TitanTricks.ui.createFlipImage = {};
+
+(function(){
+	TitanTricks.ui.createFlipImage = function(args){
+		[...]		
+	};
+})();
+
+Each folder in the structure has a file wich includes the files contained in this folder, like an index file.
+
+Look inside ui.js to have an idea.
+
+
+Global Vars:
+============
+
+The project has 4 custom global vars:
+
+1. App:
+The namespace containing all app methods, with 3 main properties:
+ App.config
+ App.model
+ App.ui
+
+Each one of this properties has a corresponding folder inside /app/ folder.
+
+2. $$:
+is an alias for App.ui.properties, created in ui/styles.js file (like tweetanium does). 
+
+3. TitanTricks:
+All components included in ui/components are created under this namespace (TitanTricks.ui.*). 
+I decided to create a diferent namespace to facilitate reusing code. You can copy and paste 
+directly the components folder inside your project. Include components.js file in your project
+and you are ready to start using TitanTricks components.
+
+4. tools:
+tools.js is a common file I usually use in my projects. The code comes mainly from tweetanium project (thank you guys!)
+and also has some string functions prototiped I miss from other languages.
+The only place where I use tools as a global var is in TitanTricks.js to add all the functionality from tools to App object
+using the mixin method (declared in tools.js).
+
+CommonJS modules?
+================
+For the project purpposes, I think is better by now not to use commonJS modules.
+
+Collaboration
+=============
+TitanTricks is open for collaboration. You can reuse code, modify or extend in any way.
+
+
+HOW TO ADD DEMOS
+================
+
+All demos views are in app/ui/demos
+Custom components are in app/ui/components
+
+--> You don't have to change any file outside the demo or component folder to add a new demo! <--
+
+Before be shown to the user, demos are built inside ViewTemplateDemo.js and WinDemo.js, wich are a template 
+with the toolbar (ios), title, descriptions and so on, in a vertical layout. Demos are launched from main index 
+tableview (in ViewIndex.js)
+
+Each ViewDemo in demos/ folder returns a view that is built inside the demos template automatically.
+
+To add a new demo, create a new ViewDemo and include it in /app/ui/demos/demos.js.
+
+Each ViewDemo has a private var called "demoInfo", with info about the demo and a "createView" interface property to 
+launch the demo from the index table.
+
+	//Standard demo declaration used along TitanTricks App to reference each demo.
+	var demoInfo = {
+		title:			'Image reflection',
+		description: 	'Creates an image with its own reflection',
+		instructions: 	'Click the image to show/hide its reflection. Only works on iOs.',
+		component: 		'ImageReflection',
+		header: 		'UI',
+		ios:			true,
+		android:		false,
+		createView: 	App.ui.demos.createViewImageReflection //IMPORTANT: Be sure you update this line with your own method.
+	}
+
+Appart of the demo folder, you may want to add some new components to the app. Please, add the components files inside components folder 
+(one component per file).
+
+Remember to include the new components in components.js to be loaded.
+
+	
+Code strong!
+
+CREDITS
+=======
+
+Author: Javier Rayon, 2011
+Contact: javier@criteriastudio.com
+GitHub Repo: https://github.com/jaraen
+Appcelerator DevLink: http://developer.appcelerator.com/devlink/profile/1190171/javier-rayon
+
+

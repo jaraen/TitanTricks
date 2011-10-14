@@ -1,0 +1,6 @@
+tmp
+*.class
+*.pyc
+*.pyo
+unused
+material grafico
