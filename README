@@ -4,16 +4,16 @@ with a didactic aim, oriented to begginers and intermediate level users.
 
 Is compatible with android and iOS, but some samples only work on iOS (indicated on each case).
 
-The project itself is a sample of how to structure a titanium project and how to work with JavaScript
+The project itself aims to be an example of how to structure a titanium project and how to work with JavaScript
 using basic technics and principles.
 
 Component oriented
 ==================
-TitanTricks uses the "factory" JavaScritp pattern everywhere. Thanks to this, there is no need to use the "new"
+TitanTricks uses the "factory" JavaScript pattern everywhere. Thanks to this, there is no need to use the "new"
 JavaScript constructor keyword (an interesting discussion about the "new" JavaScript keyword can be found in Douglas 
 Crockford literature).
 
-Echa file includes a component, that can be a only-one-use component (such as AppWindow) or a reusable component (like
+Each file includes a component, that can be a only-one-use component (such as AppWindow) or a reusable component (like
 those on /ui/components folder).
 
 And also, all TitanTricks components can be easily reused. You can copy and paste 
