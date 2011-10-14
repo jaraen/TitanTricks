@@ -58,18 +58,47 @@ TitanTricks.ui.createImageResizer = {};
 		//new nice functions for image object. If you resize an image you will probably want to 
 		//send by email or save, aren't you?
 
+		/*tmpImage.sendMail = function(args){
+			var args = args || {};
+			args.subject = args.subject || '';
+			args.attachment = args.attachment || '';
+			var file = tmpImage.savePhoto();
+			var emailDialog = Titanium.UI.createEmailDialog()
+			emailDialog.subject = args.subject;
+			emailDialog.addAttachment();
+			emailDialog.open();
+		};*/
+		
+		//To review. If image is not saved, there is no was(!?) to attach the image resized (the original will be attached instead)
 		tmpImage.sendMail = function(args){
 			var args = args || {};
 			args.subject = args.subject || '';
 			args.attachment = args.attachment || '';
+			var filename = Titanium.Filesystem.applicationDataDirectory+Titanium.Filesystem.separator + 'TitanTricks_' + imgW + 'x' + imgH + '.jpg';
 			
-			var emailDialog = Titanium.UI.createEmailDialog()
-			emailDialog.subject = args.subject;
-			emailDialog.addAttachment(tmpImage.toBlob());
-			emailDialog.open();
+			var theImage = tmpImage.toImage();
+			
+			var file = Titanium.Filesystem.getFile(filename);
+			file.write(theImage); 
+			
+			Titanium.Media.saveToPhotoGallery(file, {
+				success: function(event){
+					var emailDialog = Titanium.UI.createEmailDialog();
+					emailDialog.subject = args.subject;
+					emailDialog.addAttachment(file);
+					emailDialog.open();
+				},
+				error: function(err){
+					var a = Titanium.UI.createAlertDialog({
+						title: App.config.name
+					});
+					a.setMessage('Unexpected error. ' + filename);
+					a.show();
+				}
+			}); 
 		};
-		
-		
+
+
 		return tmpImage; //tmpImage.toImage();
 		
 	};

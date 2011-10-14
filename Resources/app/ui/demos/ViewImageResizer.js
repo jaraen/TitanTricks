@@ -48,7 +48,7 @@ App.ui.demos.createViewImageResizer = {};
 		view.add(lblSize);
 
 		var btnMail = Ti.UI.createButton({
-			title:'Send photo by e-mail',
+			title:'Save and send by e-mail',
 			top:10,
 			left:10,
 			right:10,
