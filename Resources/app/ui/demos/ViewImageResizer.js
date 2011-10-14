@@ -115,7 +115,7 @@ App.ui.demos.createViewImageResizer = {};
 	var demoInfo = {
 		title:			'Image resizer',
 		description: 	'Resizes an image from gallery for upload or send by email',
-		instructions: 	'Select an image from gallery and send it by e-mail',
+		instructions: 	'Select an image from gallery and send it by e-mail. This demo only works on iOS, but ImageResizer component should work on android.',
 		component: 		'ImageResizer',
 		header: 		'UI',
 		ios:			true,

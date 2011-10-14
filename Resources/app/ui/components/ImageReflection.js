@@ -1,5 +1,5 @@
 //
-// Creates a reflection effect
+// Creates a reflection effect. Only iOS (transform does not work fine on android)
 //
 
 TitanTricks.ui.createImageReflection = {};

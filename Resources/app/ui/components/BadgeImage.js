@@ -1,3 +1,4 @@
+//Creates and return a circle view with a wide border wiht the image inside.
 
 TitanTricks.ui.createBadgeImage = {};
 

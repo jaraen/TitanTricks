@@ -1,6 +1,6 @@
 //This method returns a fullwidth view with a table.
-//The table contains a row for each demo from titanTricks.
-//When a row is clicked, the correspondent demo view is opened in a new window
+//The table contains a row for each demo of titanTricks.
+//When a row is clicked, the correspondent demo view is created in a new window
 //and destroyed when closed
 
 
@@ -10,7 +10,7 @@ App.ui.createViewIndex = {};
 
 	//Table data is set with App.ui.demos.list array.
 	//This array is filled by each demo by itself.
-	//Look at the head of each demo View file to see how it works.
+	//Look at the end of each demo View file to see how it works.
 
 	App.ui.createViewIndex = function(){
 		
