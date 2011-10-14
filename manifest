@@ -1,8 +1,8 @@
-#appname: TitanTricks
-#publisher: criteriastudio
-#url: http://www.titantricks.com
-#image: appicon.png
-#appid: com.criteriastudio.titantricks
-#desc: undefined
-#type: ipad
-#guid: 651c1634-8a6f-4712-b8fa-40eb036e1758
+#appname:TitanTricks
+#publisher:criteriastudio
+#url:http://www.titantricks.com
+#image:appicon.png
+#appid:com.criteriastudio.titantricks
+#desc:not specified
+#type:mobile
+#guid:651c1634-8a6f-4712-b8fa-40eb036e1758
