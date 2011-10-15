@@ -9,7 +9,7 @@ App.ui.demos.createViewImageResizer = {};
 		var view = App.ui.createViewDemo(demoInfo);
 		
 		//for this demo, set largest side of the image in pixels. The new image will fit in this size.
-		var MAX_SIZE = 300;
+		var MAX_SIZE = 200;
 
 		//object that will containt an image from gallery already resized
 		var imageView = Ti.UI.createImageView();
