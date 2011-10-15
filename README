@@ -73,7 +73,9 @@ using the mixin method (declared in tools.js).
 
 CommonJS modules?
 ================
-For the project purpposes, I think is better by now not to use commonJS modules.
+CommonJS modules will be supported in future versions for reusable components. But, by now, all components are in JavaScript files, 
+under the namspace TitanTricks (folder /app/ui/components).
+
 
 Collaboration
 =============
