@@ -44,13 +44,12 @@ App.ui.createViewIndex = {};
 		tableView.addEventListener('click', function(e){
 			var row = e.row;
 			var title = e.row.demo.component;
-			//row = rows[e.index];
 
 			var w = App.ui.createWinDemo({
-				title: title
+				title: title,
+				demo: row.demo
 			});
 
-			w.add(row.demo.createView());
 			w.open();
 		});
 		
