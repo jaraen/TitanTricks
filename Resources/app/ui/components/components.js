@@ -15,7 +15,8 @@ Ti.include(
 	TitanTricks.path + 'BadgeImage.js',
 	TitanTricks.path + 'RowColumn.js',
 	TitanTricks.path + 'SwitchButton.js',
-	TitanTricks.path + 'ImageResizer.js'
+	TitanTricks.path + 'ImageResizer.js',
+	TitanTricks.path + 'CollapsibleView.js'
 );
 
 Ti.include(

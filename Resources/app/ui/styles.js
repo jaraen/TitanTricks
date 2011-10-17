@@ -31,12 +31,25 @@ App.ui.properties = {};
 			top:0, left:0, right:0, bottom:0
 		},
 		
-		VIEW_DEMO: {
+		SCROLLDEMO_VIEW: {
 			top:App.os({
 				android:0,
 				iphone:40
 			}),
-			left:0, right:0, bottom:0,
+			left:0,
+			right:0,
+			bottom:0,
+			contentHeight:'auto',
+			contentWidth:'auto'
+		},
+		
+		VIEW_DEMO: {
+			top:0,
+			left:0, right:0, 
+			height:App.os({
+				android:null,
+				iphone:800
+			}),
 			layout:'vertical',
 			backgroundColor:'#ddd'
 		},

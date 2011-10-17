@@ -17,7 +17,8 @@ Ti.include(
 	'/app/ui/demos/ViewImageReflection.js',
 	'/app/ui/demos/ViewImageResizer.js',
 	'/app/ui/demos/ViewTableMultiColumns1.js',
-	'/app/ui/demos/ViewTableMultiColumns2.js'
+	'/app/ui/demos/ViewTableMultiColumns2.js',
+	'/app/ui/demos/ViewCollapsibleView.js'
 );
 
 //Network demos
