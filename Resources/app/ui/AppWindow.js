@@ -1,6 +1,10 @@
 
+/**
+ * Creates main window creator function
+ */
+
 //Always declare public methods on header
-//This ways are easier to identify what is in this file
+//This ways is easier to find out the file content.
 App.ui.createAppWindow = {};
 
 (function(){

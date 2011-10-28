@@ -1,3 +1,7 @@
+/**
+ * Window template for each demo. Creates a new window, with a toolbar if is under iPhone platform,
+ * inserts a ViewTemplateDemo and finally creates the demo view.
+ */
 
 App.ui.createWinDemo = {};
 

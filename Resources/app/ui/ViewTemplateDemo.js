@@ -1,9 +1,7 @@
-
-//This view is used as template layout for each demo. 
-//Title, description and so on are filled from the demoInfo private var
-//of each demo.
-//The view has a vertical layout, which must be considered when building
-//the demo UI view. 
+/**
+ * View template for demos. Includes a title, description, demo instructions and a space
+ * to build the demo (in a vertical layout, which must be considered by the demo itself)
+ */
 
 App.ui.createViewDemo = {};
 

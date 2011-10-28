@@ -1,4 +1,6 @@
-
+/**
+ * Function for iPhone toolBar creation (Android does not need a toolbar). Used in WinDemo.js
+ */
 
 App.ui.createIosToolBar = {};
 

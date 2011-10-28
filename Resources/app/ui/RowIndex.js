@@ -1,4 +1,8 @@
 
+/**
+ * Row renderer for main index table view (ViewIndex.js)
+ */
+
 App.ui.createRowItem = {};
 
 (function(){

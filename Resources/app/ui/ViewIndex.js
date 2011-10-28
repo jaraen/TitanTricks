@@ -1,7 +1,11 @@
-//This method returns a fullwidth view with a table.
-//The table contains a row for each demo of titanTricks.
-//When a row is clicked, the correspondent demo view is created in a new window
-//and destroyed when closed
+/**
+ * Creates main menu table view ("index table")
+ */
+
+// This method returns a fullwidth view with a table.
+// The table contains a row for each demo of titanTricks.
+// When a row is clicked, the correspondent demo view is created in a new window
+// and destroyed when closed.
 
 
 App.ui.createViewIndex = {};
@@ -20,6 +24,7 @@ App.ui.createViewIndex = {};
 		var list = App.ui.demos.list;
 
 		//convert App.ui.demos.list array items in ViewTableRow objects
+		
 		var oldHeader = '?';
 		for(var i = 0, j = list.length; i < j; i++) {
 			rows.push(App.ui.createRowItem(list[i]));

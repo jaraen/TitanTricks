@@ -1,3 +1,6 @@
+/**
+ * Generic styles
+ */
 
 App.ui.properties = {};
 //App.ui.themes = {};
@@ -34,7 +37,7 @@ App.ui.properties = {};
 		SCROLLDEMO_VIEW: {
 			top:App.os({
 				android:0,
-				iphone:40
+				iphone:40	//iphone toolbar size
 			}),
 			left:0,
 			right:0,
@@ -123,7 +126,7 @@ App.ui.properties = {};
 			height:80,
 			width:200,
 			zIndex:10,
-			message:'Cargando...',
+			message:'Loading...',
 			style:Titanium.UI.iPhone.ActivityIndicatorStyle.BIG
 		}
 	};

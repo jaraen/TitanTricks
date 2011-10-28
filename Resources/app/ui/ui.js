@@ -1,4 +1,6 @@
-
+/**
+ * Index for all files on ui folder and App.ui declaration
+ */
 
 App.ui = {};
 
