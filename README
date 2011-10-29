@@ -13,12 +13,21 @@ TitanTricks uses the "factory" JavaScript pattern everywhere. Thanks to this, th
 JavaScript constructor keyword (an interesting discussion about the "new" JavaScript keyword can be found in Douglas 
 Crockford literature).
 
-Each file includes a component, that can be a only-one-use component (such as AppWindow) or a reusable component (like
-those on /ui/components folder).
+Specific app components are defined inside 'app' folder, using one js file for each component (AppWindow, WinDemo...)
 
-And also, all TitanTricks components can be easily reused. You can copy and paste 
-directly the ui/components folder inside your projects. Include components.js file in your code
-and you are ready to start using TitanTricks components.
+Reusable components are now in commonJS modules, under 'modules' folder. At this time, one module TitanTricksUIComponents.js
+is available. Even inside the commonJS module, the factory patter is used, with public methods such as createLongClickButton()
+or createCollapsible()
+
+All TitanTricks components can be easily reused. Copy and paste 'modules' folder and require() them. Since TitanTricks modules
+are organized in types (UI, network, data...), you may want to load in properties of a global object. Note that, at this time,
+TitanTricks only provides UI components, but this may change in future :)
+  
+  var TitanTricks = {}:
+  TitanTricks.ui = require('/modules/TitanTricksUIComponents');
+  
+  var btn = TitanTricks.ui.createLonkClickButton({title:'here we go!'});
+
 
 
 Style
@@ -30,15 +39,15 @@ public method declarations. For example:
 
 //declare all public methods of this file before start coding.
 //JSlint friendly :)
-TitanTricks.ui.createFlipImage = {};
+App.ui.createWinDemo = {};
 
 (function(){
-	TitanTricks.ui.createFlipImage = function(args){
+	App.ui.createWinDemo = function(args){
 		[...]		
 	};
 })();
 
-Each folder in the structure has a file wich includes the files contained in this folder, like an index file.
+Each folder in the structure (config, model, ui and demos) has a file wich includes the files contained in this folder, like an index file.
 
 Look inside ui.js to have an idea.
 
@@ -60,10 +69,9 @@ Each one of this properties has a corresponding folder inside /app/ folder.
 is an alias for App.ui.properties, created in ui/styles.js file (like tweetanium does). 
 
 3. TitanTricks:
-All components included in ui/components are created under this namespace (TitanTricks.ui.*). 
-I decided to create a diferent namespace to facilitate reusing code. You can copy and paste 
-directly the components folder inside your project. Include components.js file in your project
-and you are ready to start using TitanTricks components.
+All components included in commonJS modules are created under this namespace (TitanTricks.ui.*). 
+I decided to create a diferent namespace to facilitate reusing code. Copy and paste modules folder
+in your project and start reusing demo code.
 
 4. tools:
 tools.js is a common file I usually use in my projects. The code comes mainly from tweetanium project (thank you guys!)
@@ -73,9 +81,14 @@ using the mixin method (declared in tools.js).
 
 CommonJS modules?
 ================
-CommonJS modules will be supported in future versions for reusable components. But, by now, all components are in JavaScript files, 
-under the namspace TitanTricks (folder /app/ui/components).
+CommonJS modules is now supported for reusable components. If you don't know how to use commonJS modules on Titanium, these two
+reads will help a lot:
 
+http://wiki.appcelerator.org/display/guides/CommonJS+in+Titanium
+http://wiki.appcelerator.org/display/guides/Mobile+Best+Practices
+
+Right now there is a big module file with all components (TitanTricksUIComponents.js), but I'll probably split it in several files, 
+one for each component.
 
 Collaboration
 =============
@@ -85,10 +98,11 @@ TitanTricks is open for collaboration. You can reuse code, modify or extend in a
 HOW TO ADD DEMOS
 ================
 
-All demos views are in app/ui/demos
-Custom components are in app/ui/components
+All demo views are in app/ui/demos
 
---> You don't have to change any file outside the demo or component folder to add a new demo! <--
+Custom components are in modules/
+
+--> You don't have to change any file outside the demo modules to add a new demo! <--
 
 Before be shown to the user, demos are built inside ViewTemplateDemo.js and WinDemo.js, wich are a template 
 with the toolbar (ios), title, descriptions and so on, in a vertical layout. Demos are launched from main index 
@@ -113,8 +127,8 @@ launch the demo from the index table.
 		createView: 	App.ui.demos.createViewImageReflection //IMPORTANT: Be sure you update this line with your own method.
 	}
 
-Appart of the demo folder, you may want to add some new components to the app. Please, add the components files inside components folder 
-(one component per file).
+Appart of the demo folder, you may want to add some new components to the app. Please, add the components files inside commonJS modules, in
+modules folder.
 
 Remember to include the new components in components.js to be loaded.
 
@@ -125,7 +139,7 @@ CREDITS
 =======
 
 Author: Javier Rayon, 2011
-Contact: javier@criteriastudio.com
+Contact: javier at criteriastudio dot com
 GitHub Repo: https://github.com/jaraen
 Appcelerator DevLink: http://developer.appcelerator.com/devlink/profile/1190171/javier-rayon
 

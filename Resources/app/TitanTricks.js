@@ -6,7 +6,7 @@
 var App = {};
 
 var TitanTricks = {};
-TitanTricks.ui = require('modules/TitanTricksUIComponents');
+TitanTricks.ui = require('/modules/TitanTricksUIComponents');
 
 (function(){
 	
