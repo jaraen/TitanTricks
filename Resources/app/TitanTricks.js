@@ -5,6 +5,9 @@
 
 var App = {};
 
+var TitanTricks = {};
+TitanTricks.ui = require('modules/TitanTricksUIComponents');
+
 (function(){
 	
 	tools.mixin(App, tools);

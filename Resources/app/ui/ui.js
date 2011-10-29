@@ -5,7 +5,6 @@
 App.ui = {};
 
 //indexates to components folder
-Ti.include('/app/ui/components/components.js');
 Ti.include('/app/ui/demos/demos.js');
 
 //ui views and styles

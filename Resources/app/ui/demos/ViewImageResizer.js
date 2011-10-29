@@ -2,9 +2,7 @@
 App.ui.demos.createViewImageResizer = {};
 
 (function(){
-	
-
-		
+			
 	App.ui.demos.createViewImageResizer = function(){
 		var view = App.ui.createViewDemo(demoInfo);
 		
