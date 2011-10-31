@@ -22,7 +22,9 @@ or createCollapsible()
 All TitanTricks components can be easily reused. Copy and paste 'modules' folder and require() them. Since TitanTricks modules
 are organized in types (UI, network, data...), you may want to load in properties of a global object. Note that, at this time,
 TitanTricks only provides UI components, but this may change in future :)
-  
+
+::
+
   var TitanTricks = {}:
   TitanTricks.ui = require('/modules/TitanTricksUIComponents');
   
@@ -37,15 +39,17 @@ TitanTricks is built following the "Tweetanium style", but a little bit more str
 Each file includes in its first lines the public methods implemented in that file, so is easier to find
 public method declarations. For example:
 
-//declare all public methods of this file before start coding.
-//JSlint friendly :)
-App.ui.createWinDemo = {};
+::
 
-(function(){
-	App.ui.createWinDemo = function(args){
-		[...]		
-	};
-})();
+  //declare all public methods of this file before start coding.
+  //JSlint friendly :)
+  App.ui.createWinDemo = {};
+
+  (function(){
+  	App.ui.createWinDemo = function(args){
+  		[...]		
+  	};
+  })();
 
 Each folder in the structure (config, model, ui and demos) has a file wich includes the files contained in this folder, like an index file.
 
@@ -114,6 +118,8 @@ To add a new demo, create a new ViewDemo and include it in /app/ui/demos/demos.j
 Each ViewDemo has a private var called "demoInfo", with info about the demo and a "createView" interface property to 
 launch the demo from the index table.
 
+::
+
 	//Standard demo declaration used along TitanTricks App to reference each demo.
 	var demoInfo = {
 		title:			'Image reflection',
@@ -138,8 +144,12 @@ CREDITS
 =======
 
 Author: Javier Rayon, 2011
+
 Contact: javier at criteriastudio dot com
+
 GitHub Repo: https://github.com/jaraen
+
 Appcelerator DevLink: http://developer.appcelerator.com/devlink/profile/1190171/javier-rayon
+
 
 
