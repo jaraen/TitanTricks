@@ -1,3 +1,5 @@
+TitanTricks Readme
+==================
 
 TitanTricks is Titanium Mobile project, full of reusable code samples and tricks
 with a didactic aim, oriented to begginers and intermediate level users.
@@ -63,9 +65,9 @@ The project has 4 custom global vars:
 
 1. App:
 The namespace containing all app methods, with 3 main properties:
- App.config
- App.model
- App.ui
+ - App.config
+ - App.model
+ - App.ui
 
 Each one of this properties has a corresponding folder inside /app/ folder.
 
@@ -85,7 +87,9 @@ using the mixin method (declared in tools.js).
 
 CommonJS modules?
 ================
-CommonJS modules is now supported for reusable components. If you don't know how to use commonJS modules on Titanium, these two reads will help a lot:
+CommonJS modules is now supported for reusable components. But please note that does not work on Android and SDK 1.7.3. (but works fine with 1.7.1). 
+
+If you don't know how to use commonJS modules on Titanium, these two reads will help a lot:
 
 http://wiki.appcelerator.org/display/guides/CommonJS+in+Titanium
 http://wiki.appcelerator.org/display/guides/Mobile+Best+Practices
@@ -122,23 +126,20 @@ launch the demo from the index table.
 
 	//Standard demo declaration used along TitanTricks App to reference each demo.
 	var demoInfo = {
-		title:			'Image reflection',
+		title:	'Image reflection',
 		description: 	'Creates an image with its own reflection',
 		instructions: 	'Click the image to show/hide its reflection. Only works on iOs.',
-		component: 		'ImageReflection',
-		header: 		'UI',
-		ios:			true,
-		android:		false,
-		createView: 	App.ui.demos.createViewImageReflection //IMPORTANT: Be sure you update this line with your own method.
+		component:	'ImageReflection',
+		header:	'UI',
+		ios:	true,
+		android:	false,
+		createView:	App.ui.demos.createViewImageReflection //IMPORTANT: Be sure you update this line with your own method.
 	}
 
 Appart of the demo folder, you may want to add some new components to the app. Please, add the components files inside commonJS modules, in
 modules folder.
-
-Remember to include the new components in components.js to be loaded.
-
 	
-Code strong!
+and code strong!
 
 CREDITS
 =======
