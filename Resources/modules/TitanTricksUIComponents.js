@@ -1,17 +1,24 @@
 /**
  * TitanTricks UI. Reusable Components for Titanium Mobile - CommonJS Module
  * 
- * @version      0.1
+ * @version      0.2
  * @author       Javier Rayon, 2011. Criteria Studio.
+ * 
+ * Implemented methods are:
+ * 
+ * - createBadgeImage
+ * - createCollapsibleView
+ * - createProgressBar
+ * - createFlipImage
+ * - createImageReflection
+ * - createImageResizer
+ * - createLongClickButton
+ * - createRowColumn
+ * - createSwitchButton
  * 
  */
 
-var TitanTricks = {};
-TitanTricks.ui = {};
 
-exports = TitanTricks.ui;
-
- 
 /**
  * BadgeImage
  * Returns a round bordered Titanium.UI.View with a specified image inside that animates itself when clicked.
@@ -22,7 +29,7 @@ exports = TitanTricks.ui;
  * @return Ti.UI.View
  */
 
-TitanTricks.ui.createBadgeImage = function(args){
+exports.createBadgeImage = function(args){
 
 	var args = args || {};
 	args.badge = args.badge || {
@@ -87,7 +94,7 @@ TitanTricks.ui.createBadgeImage = function(args){
  * @return Ti.UI.View with public method collapse(true|false) to collapse/expand the body view
  */
 
-TitanTricks.ui.createCollapsibleView = function(args){
+exports.createCollapsibleView = function(args){
 	
 	var android = Ti.Platform.osname === 'android';
 	
@@ -159,7 +166,7 @@ TitanTricks.ui.createCollapsibleView = function(args){
  * @return Ti.UI.View with public method updateValue(newValue) to update progressBar value
  */
 
-TitanTricks.ui.createProgressBar = function(args){
+exports.createProgressBar = function(args){
 
 	var args = args || {};
 	args.min = args.min || 0;
@@ -208,7 +215,7 @@ TitanTricks.ui.createProgressBar = function(args){
  * @return Ti.UI.View with a public method flip() that flips the image and fires event 'flip'
  */
 
-TitanTricks.ui.createFlipImage = function(args){
+exports.createFlipImage = function(args){
 	//args object must contain at least properties imageA and imageB
 	var args = args || {};
 	
@@ -259,7 +266,7 @@ TitanTricks.ui.createFlipImage = function(args){
  * @return Ti.UI.View with two public methods: showReflection() and hideReflection();
  */
 
-TitanTricks.ui.createImageReflection = function(args){
+exports.createImageReflection = function(args){
 
 	var args = args || {};
 	args.reflect = args.reflect || true;
@@ -322,7 +329,7 @@ TitanTricks.ui.createImageReflection = function(args){
 
 //media will be usually the event.media object returned by openPhotoGallery
 //but any image with properties width and height would work
-TitanTricks.ui.createImageResizer = function(/*media object*/ media) {
+exports.createImageResizer = function(/*media object*/ media) {
 	
 	var media = media || {};
 	
@@ -415,7 +422,7 @@ TitanTricks.ui.createImageResizer = function(/*media object*/ media) {
  * @return Ti.UI.Button that fires a 'lonclick' event when is pressed 500 ms.
  */
 
-TitanTricks.ui.createLongClickButton = function(args) {
+exports.createLongClickButton = function(args) {
 	
 	var defaultDelay = 500; //ms.
 	var args = args || {};
@@ -461,7 +468,7 @@ TitanTricks.ui.createLongClickButton = function(args) {
  * @return TableViewRow
  */
 
-TitanTricks.ui.createRowColumn = function(args){
+exports.createRowColumn = function(args){
 
 	var	LABEL_DEFAULT = {
 			textAlign:'center', 
@@ -544,7 +551,7 @@ TitanTricks.ui.createRowColumn = function(args){
 
 //Fires event 'change' to emulate native switch controls.
 
-TitanTricks.ui.createSwitchButton = function(args){
+exports.createSwitchButton = function(args){
 
 	var args = args || {};
 	//ensure value property will exist in btn object
