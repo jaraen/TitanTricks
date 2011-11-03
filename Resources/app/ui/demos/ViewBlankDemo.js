@@ -25,8 +25,7 @@ App.ui.demos.createViewBlank = {};
 		createView: 	App.ui.demos.createViewBlank //Replace by your creator function
 	}
 	
-	//UNCOMMENT THIS LINE. IS COMMENTED TO AVOID THE BLANK VIEW APPEARS IN THE DEMOS INDEX
 	//add demo info to the array used to fill the index table view.
-	//App.ui.demos.list.push(demoInfo);
+	App.ui.demos.list.push(demoInfo);
 
 })();
