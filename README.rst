@@ -87,7 +87,7 @@ using the mixin method (declared in tools.js).
 
 CommonJS modules?
 ================
-CommonJS modules is now supported for reusable components. But please note that does not work on Android and SDK 1.7.3. (but works fine with 1.7.1). 
+CommonJS modules is now supported for reusable components.
 
 If you don't know how to use commonJS modules on Titanium, these two reads will help a lot:
 
