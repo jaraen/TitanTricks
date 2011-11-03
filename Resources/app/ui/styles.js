@@ -27,7 +27,7 @@ App.ui.properties = {};
 		WINDOW_DEMO:{
 			navBarHidden:false,
 			top:0, left:0, right:0, bottom:0,
-			backgroundColor: '#999'
+			backgroundColor: '#ddd'
 		},
 		
 		FULL_VIEW: {
@@ -51,7 +51,7 @@ App.ui.properties = {};
 			left:0, right:0, 
 			height:App.os({
 				android:null,
-				iphone:800
+				iphone:'auto'
 			}),
 			layout:'vertical',
 			backgroundColor:'#ddd'
