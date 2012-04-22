@@ -28,7 +28,7 @@ Coding style and commonJS modules
 TitanTricks is built based on commonJS modules. All path modules are declared in module ModulePaths, so there's no need to use 
 paths in the project (except for the path to ModulesPath.js file):
 
-::
+``` 
 var Mods = require('/ModulePaths');
 
 //all the app modules are declared as constants inside a module
@@ -40,7 +40,7 @@ module.exports = function() {
 	var win = Ti.UI.createWindow ($$.APP_WINDOW);
 	...
 }
-
+``` 
 
 Also the common styles for the app are defined in Styles.js file, and commonly assigned to $$ var, as a reminiscence of the tweetanium app.
 Specific styles for some demos are declared inside each demo view.
@@ -50,6 +50,7 @@ Tools.js file includes some useful and reusable functions and is required all al
 If you don't know how to use commonJS modules on Titanium, these two reads will help a lot:
 
 http://wiki.appcelerator.org/display/guides/CommonJS+in+Titanium
+
 http://wiki.appcelerator.org/display/guides/Mobile+Best+Practices
 
 Global Vars:
@@ -59,7 +60,7 @@ Global what? :)
 There's no need for global vars using CommonJS modules. Even the code in app.js has been involved in an anonymous javascript function
 to avoid pollute the global scope. 
 
-::
+```
 (function(){
 	
 	var Mods = require('/ModulePaths');
@@ -73,7 +74,7 @@ to avoid pollute the global scope.
 })();
 
 //no global vars here!
-
+```
 
 
 Collaboration
@@ -81,7 +82,7 @@ Collaboration
 TitanTricks is open for collaboration. You can reuse code, modify or extend in any way.
 
 
-HOW TO ADD DEMOS
+How to add demos
 ================
 
 All demo views are in app/ui/demos
@@ -99,7 +100,7 @@ To add a new demo, create a new ViewDemo module and include it in /app/ui/demos/
 Each ViewDemo has a  var called "demoInfo", with info about the demo and a "createView" interface property to 
 launch the demo from the index table.
 
-::
+```
 	//Standard demo declaration used along TitanTricks App to reference each demo.
 	var demoInfo = {
 		title:	'Image reflection',
@@ -116,12 +117,13 @@ launch the demo from the index table.
 	};
 	
 	module.exports = demoInfo; //make it public
+```
 
 Appart of the demo folder, you may want to add some new components to the app. Add the components files inside the components.
 	
-and code strong!
+Code strong!
 
-CREDITS
+Credits
 =======
 
 Author: Javier Rayon, 2011
