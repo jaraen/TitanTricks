@@ -22,7 +22,7 @@ All TitanTricks components can be easily reused. Copy and paste 'components' fol
 
 Coding style and commonJS modules
 =================================
-TitanTricks is built based on commonJS modules. All path modules are declared in module ModulePaths, so there's no need to use 
+All path to commonJS modules are declared in module ModulePaths.js, so there's no need to use 
 paths in the project (except for the path to ModulesPath.js file):
 
 ::
@@ -123,7 +123,7 @@ launch the demo from the index table.
 	module.exports = demoInfo; //make it public
 
 
-Appart of the demo folder, you may want to add some new components to the app. Add the components files inside the components.
+Appart of the demo folder, you may want to add some new components to the app. Add your custom components inside components folder.
 	
 Code strong!
 
