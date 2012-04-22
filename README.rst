@@ -28,19 +28,19 @@ Coding style and commonJS modules
 TitanTricks is built based on commonJS modules. All path modules are declared in module ModulePaths, so there's no need to use 
 paths in the project (except for the path to ModulesPath.js file):
 
-``` 
-var Mods = require('/ModulePaths');
+::
+	var Mods = require('/ModulePaths');
+	
+	//all the app modules are declared as constants inside a module
+	var IndexView = require(Mods.INDEXVIEW),
+		Tools = require(Mods.TOOLS),
+		$$ = require(Mods.STYLES);
+	
+	module.exports = function() {
+		var win = Ti.UI.createWindow ($$.APP_WINDOW);
+		...
+	}
 
-//all the app modules are declared as constants inside a module
-var IndexView = require(Mods.INDEXVIEW),
-	Tools = require(Mods.TOOLS),
-	$$ = require(Mods.STYLES);
-
-module.exports = function() {
-	var win = Ti.UI.createWindow ($$.APP_WINDOW);
-	...
-}
-``` 
 
 Also the common styles for the app are defined in Styles.js file, and commonly assigned to $$ var, as a reminiscence of the tweetanium app.
 Specific styles for some demos are declared inside each demo view.
@@ -60,21 +60,21 @@ Global what? :)
 There's no need for global vars using CommonJS modules. Even the code in app.js has been involved in an anonymous javascript function
 to avoid pollute the global scope. 
 
-```
-(function(){
+::
+	(function(){
+		
+		var Mods = require('/ModulePaths');
+		
+		var	AppWindow = require(Mods.APPWINDOW);
+		
+		var appWin = new AppWindow();
+		
+		appWin.open();
 	
-	var Mods = require('/ModulePaths');
+	})();
 	
-	var	AppWindow = require(Mods.APPWINDOW);
-	
-	var appWin = new AppWindow();
-	
-	appWin.open();
+	//no global vars here!
 
-})();
-
-//no global vars here!
-```
 
 
 Collaboration
@@ -100,7 +100,7 @@ To add a new demo, create a new ViewDemo module and include it in /app/ui/demos/
 Each ViewDemo has a  var called "demoInfo", with info about the demo and a "createView" interface property to 
 launch the demo from the index table.
 
-```
+::
 	//Standard demo declaration used along TitanTricks App to reference each demo.
 	var demoInfo = {
 		title:	'Image reflection',
@@ -117,7 +117,7 @@ launch the demo from the index table.
 	};
 	
 	module.exports = demoInfo; //make it public
-```
+
 
 Appart of the demo folder, you may want to add some new components to the app. Add the components files inside the components.
 	
