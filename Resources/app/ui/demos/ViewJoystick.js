@@ -8,12 +8,12 @@ var DemoTemplateView = require(Mods.TEMPLATEDEMO),
 //Standard demo declaration used along TitanTricks App to reference each demo.
 var demoInfo = {
 	title:			'Joystick',
-	description: 	'A joystick-like control, with x and y coords',
+	description: 	'A basic joystick controller',
 	instructions: 	'Move the joystick',
 	component: 		'JoystickControl',
 	header: 		'UI',
 	ios:			true,
-	android:		true
+	android:		false
 }
 
 demoInfo.createView = function(){
@@ -39,7 +39,7 @@ demoInfo.createView = function(){
 	var joystick = new JoystickController();
 	
 	joystick.addEventListener('move', function(e){
-		lblStatus.text = 'x: ' + e.x + ', y: ' + e.y;
+		lblStatus.text = 'x: ' + Math.round(e.x*100)/100 + ', y: ' + Math.round(e.y*100)/100;
 	});
 	
 	container.add(joystick);

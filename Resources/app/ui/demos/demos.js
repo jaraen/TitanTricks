@@ -4,11 +4,11 @@ var demosToRequire = [
 	'/app/ui/demos/ViewSwitchButton',
 	'/app/ui/demos/ViewLongClick',
 	'/app/ui/demos/ViewCustomProgressBar',
+	'/app/ui/demos/ViewJoystick',
 	'/app/ui/demos/ViewFlipImage',
 	'/app/ui/demos/ViewBadgeImage',
 	'/app/ui/demos/ViewImageReflection',
 	'/app/ui/demos/ViewImageResizer',
-	'/app/ui/demos/ViewJoystick',
 	'/app/ui/demos/ViewTableMultiColumns1',
 	'/app/ui/demos/ViewTableMultiColumns2',
 	'/app/ui/demos/ViewCollapsibleView'
