@@ -5,15 +5,14 @@ var components = '/app/ui/components/';
 module.exports = {
 	//App components
 	APPWINDOW: ui + 'AppWindow',
-	INDEXVIEW: ui + 'ViewIndex',
-	INDEXROWVIEW: ui + 'RowIndex',	
-	DEMOWIN: ui + 'WinDemo',
-	MAINVIEW: ui + 'MainView',
-	TEMPLATEDEMO: ui + 'ViewTemplateDemo',
+	INDEXVIEW: ui + 'IndexView',
+	INDEXROWVIEW: ui + 'IndexRowView',	
+	DEMOWIN: ui + 'Demowin',
+	TEMPLATEDEMO: ui + 'TemplateDemoView',
 	
 	//Others
 	TOOLS: '/app/Tools',
-	STYLES: ui + 'styles',
+	STYLES: ui + 'Styles',
 	
 	//Demos "proxy"
 	DEMOSLIST: ui + 'demos/demos',

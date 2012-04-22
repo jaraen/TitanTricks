@@ -16,17 +16,3 @@
 	appWin.open();
 	
 })();
-
-	
-	
-/*Ti.UI.setBackgroundColor('#eee');
-
-	
-	var l = Ti.UI.createLabel({text:'hola', width:300, height:300, backgroundColor:'blue'});
-	
-	var w = Ti.UI.createWindow();
-	
-	w.add(l);
-	
-	w.open();
-*/

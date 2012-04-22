@@ -1,5 +1,5 @@
 /**
- * Creates main window creator function
+ * Creates main window 
  */
 
 

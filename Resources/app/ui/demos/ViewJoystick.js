@@ -29,7 +29,7 @@ demoInfo.createView = function(){
 		text:'Move the joystick'
 	});
 	
-	//joystick animation does not work fine on ios if it is in a vertical layout, so I create a view with absolute layoute
+	//joystick animation does not work fine on ios if it is in a vertical layout, so I create a view with absolute layout
 	//to draw the component on the demo view
 	var container = Ti.UI.createView({
 		left:0, right:0,
