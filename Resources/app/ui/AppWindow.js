@@ -1,21 +1,18 @@
-
 /**
  * Creates main window creator function
  */
 
-//Always declare public methods on header
-//This ways is easier to find out the file content.
-App.ui.createAppWindow = {};
 
-(function(){
+var Mods = require('/ModulePaths');
+
+var IndexView = require(Mods.INDEXVIEW),
+	Tools = require(Mods.TOOLS),
+	$$ = require(Mods.STYLES);
+
+module.exports = function() {
+	var win = Ti.UI.createWindow ($$.APP_WINDOW);
 	
-	App.ui.createAppWindow = function (){
-		
-		var win = Ti.UI.createWindow ($$.APP_WINDOW);
-		
-		win.add(App.ui.createViewIndex());
+	win.add(new IndexView());
 
-		return win;
-	}
-})();
-
+	return win;
+}
