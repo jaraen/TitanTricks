@@ -11,16 +11,13 @@ using basic technics and principles.
 
 Component oriented
 ==================
-TitanTricks has been completely refactored to commonJS modules. Following Appcelerator guidelines, the app only uses
-commonJS modules.
+TitanTricks has been completely refactored to commonJS modules, following Appcelerator guidelines.
 
 Specific app components are defined inside 'app' folder, using one js file for each component (AppWindow, DemoWin, IndexView...)
 
-Reusable components are now in commonJS modules, under 'components' folder. 
+Also, reusable components are now commonJS modules, under 'app/ui/components' folder. 
 
-All TitanTricks components can be easily reused. Copy and paste 'modules' folder and require() them. Since TitanTricks modules
-are organized in types (UI, network, data...), you may want to load in properties of a global object. Note that, at this time,
-TitanTricks only provides UI components, but this may change in future
+All TitanTricks components can be easily reused. Copy and paste 'components' folder and require() them in your project.
 
 
 Coding style and commonJS modules
@@ -48,7 +45,7 @@ Specific styles for some demos are declared inside each demo view.
 
 Tools.js file includes some useful and reusable functions and is required all along the project.
 
-If you don't know how to use commonJS modules on Titanium, these two reads will help a lot:
+For more info about how to use commonJS modules on Titanium, these two reads will help a lot:
 
 http://wiki.appcelerator.org/display/guides/CommonJS+in+Titanium
 
@@ -67,7 +64,7 @@ to avoid pollute the global scope.
 		
 		var Mods = require('/ModulePaths');
 		
-		var	AppWindow = require(Mods.APPWINDOW);
+		var AppWindow = require(Mods.APPWINDOW);
 		
 		var appWin = new AppWindow();
 		
@@ -116,7 +113,11 @@ launch the demo from the index table.
 	}
 	
 	demoInfo.createView = function(){
-		//implement here your demo
+		var view = new DemoTemplateView(demoInfo);
+	
+		//implement here your demo and build over the view component
+		...		
+		return view;
 	};
 	
 	module.exports = demoInfo; //make it public
