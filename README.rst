@@ -29,6 +29,7 @@ TitanTricks is built based on commonJS modules. All path modules are declared in
 paths in the project (except for the path to ModulesPath.js file):
 
 ::
+
 	var Mods = require('/ModulePaths');
 	
 	//all the app modules are declared as constants inside a module
@@ -61,6 +62,7 @@ There's no need for global vars using CommonJS modules. Even the code in app.js 
 to avoid pollute the global scope. 
 
 ::
+
 	(function(){
 		
 		var Mods = require('/ModulePaths');
@@ -101,6 +103,7 @@ Each ViewDemo has a  var called "demoInfo", with info about the demo and a "crea
 launch the demo from the index table.
 
 ::
+
 	//Standard demo declaration used along TitanTricks App to reference each demo.
 	var demoInfo = {
 		title:	'Image reflection',
