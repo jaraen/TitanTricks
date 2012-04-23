@@ -14,7 +14,7 @@ var demoInfo = {
 	component: 		'BadgeImage',
 	header: 		'UI',
 	ios:			true,
-	android:		false
+	android:		true
 };
 
 demoInfo.createView = function(){

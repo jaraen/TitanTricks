@@ -3,8 +3,8 @@
  * BadgeImage
  * Returns a round bordered Titanium.UI.View with a specified image inside that animates itself when clicked.
  * 
- * @param args		javascript object that sould contain, at least, 'image' property with a valid url (local or remote)
- * 					and any other titanium view property..
+ * @param args		javascript object that should contain, at least, 'image' property with a valid url (local or remote)
+ * 					and any other titanium view property.
  * 
  * @return Ti.UI.View
  */
@@ -38,26 +38,39 @@ module.exports = function(args){
 		duration:durationAnim,
 		curve:Ti.UI.ANIMATION_CURVE_EASE_OUT
 	});
-
-	//autoreverse only works on ios, so a workaround is needed
+	
+	//Android animations require a few more adjustments.
 	if(Ti.Platform.osname === 'android'){
+
+		var reverseAnim = Ti.UI.createAnimation({
+			bottom: 0,
+			autoreverse: true,
+			//repeat:1,
+			duration:durationAnim,
+			curve:Ti.UI.ANIMATION_CURVE_EASE_OUT
+		});
+		
+		if(args.left) {
+			anim.left = args.left;
+			reverseAnim.left = args.left;
+		}
+		if(args.right) {
+			anim.right = args.right;	
+			reverseAnim.right = args.right;
+		}
+		if(args.top) {
+			anim.top = args.top;
+			reverseAnim.top = args.top;
+		}
+		
+		//Autoreverse only works on ios, so lets reverse the android animation
 		anim.addEventListener('complete', function(){
-			view.animate({
-				bottom:0,
-				left:args.left || 0,
-				rigth:args.rigth || 0,
-				top:args.top || 0,
-				duration:durationAnim
-			});
+			view.animate(reverseAnim);
 		});
 	}
 	
 	view.addEventListener('click', function(){
-		if(Ti.Platform.osname === 'android'){
 			view.animate(anim);
-		}else{
-			img.animate(anim);
-		}
 	});
 
 	return view;
