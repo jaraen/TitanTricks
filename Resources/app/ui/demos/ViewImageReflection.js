@@ -21,8 +21,8 @@ demoInfo.createView = function(){
 
 	var img = new ReflectImage({
 		image: 'http://developer.appcelerator.com/assets/img/badge_titan.png',
-		height: Ti.UI.SIZE,
-		width: Ti.UI.SIZE,
+		height: 100,
+		width: 100,
 		top:10,
 		bgColor: '#000'
 	});

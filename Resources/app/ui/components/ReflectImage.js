@@ -14,10 +14,10 @@ module.exports = function(args){
 	args.reflect = args.reflect || true;
 	
 	var view = Ti.UI.createView(args);
+	view.height *= 2;	//double the component height to fit the mirror image
 
 	args.image = args.image || 'none';
 	args.bgColor = args.bgColor || '#000';
-	args
 	
 	var img = Ti.UI.createImageView(args);
 	
