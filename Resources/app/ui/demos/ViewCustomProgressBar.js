@@ -77,7 +77,7 @@ demoInfo.createView = function(){
 		min:1,
 		max:50,
 		value:10,
-		height:20,
+		height:30,
 		left:20,
 		right:20,
 		bottom:20
