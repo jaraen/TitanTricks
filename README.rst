@@ -9,6 +9,8 @@ Is compatible with android and iOS, but some samples only work on iOS (indicated
 The project itself aims to be an example of how to structure a titanium project and how to work with JavaScript
 using basic technics and principles.
 
+There is a mobile web version of this project [here](https://github.com/jaraen/TitanTricksMobileWeb)
+
 Component oriented
 ==================
 TitanTricks has been completely refactored to commonJS modules, following Appcelerator guidelines.
