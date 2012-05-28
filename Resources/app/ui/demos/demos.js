@@ -11,7 +11,8 @@ var demosToRequire = [
 	'/app/ui/demos/ViewImageResizer',
 	'/app/ui/demos/ViewTableMultiColumns1',
 	'/app/ui/demos/ViewTableMultiColumns2',
-	'/app/ui/demos/ViewCollapsibleView'
+	'/app/ui/demos/ViewCollapsibleView',
+	'/app/ui/demos/ViewAbout'
 ];
 
 
