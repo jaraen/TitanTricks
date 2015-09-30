@@ -125,7 +125,7 @@ launch the demo from the index table.
 	module.exports = demoInfo; //make it public
 
 
-Appart of the demo folder, you may want to add some new components to the app. Add your custom components inside components folder.
+Apart of the demo folder, you may want to add some new components to the app. Add your custom components inside components folder.
 	
 Code strong!
 
