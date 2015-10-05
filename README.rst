@@ -2,7 +2,7 @@ TitanTricks Readme
 ==================
 
 TitanTricks is Titanium Mobile project, full of reusable code samples and tricks
-with a didactic aim, oriented to begginers and intermediate level users.
+with a didactic aim, oriented to beginners and intermediate level users.
 
 Is compatible with android and iOS, but some samples only work on iOS (indicated on each case).
 
